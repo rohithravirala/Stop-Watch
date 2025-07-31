@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-500 via-teal-600 to-indigo-600 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-xl w-full max-w-md overflow-hidden transition-all animate-slide-in">
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-teal-700 to-blue-700 p-6 text-white">
+            <h1 class="text-3xl font-bold text-center tracking-tight" aria-label="Stopwatch Application">Stop Watch</h1>
+            <p class="text-center text-blue-100 mt-2 text-lg">Your Precision Timing Companion</p>
+        </div>
+        
+        <!-- Main Stopwatch Display -->
+        <div class="p-6 flex flex-col items-center">
+            <div class="text-5xl font-mono font-bold text-gray-900 mb-6 animate-pulse-time" id="display">
+                00:00:00<span class="text-3xl">.000</span>
+            </div>
+            
+            <!-- Control Buttons -->
+            <div class="flex gap-4 mb-8">
+                <button id="startBtn" class="btn bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full shadow-lg transition-all" aria-label="Start stopwatch">
+                    Start
+                </button>
+                <button id="pauseBtn" class="btn bg-teal-700 hover:bg-teal-800 text-white px-6 py-3 rounded-full shadow-lg transition-all disabled:opacity-100" aria-label="Pause stopwatch" disabled>
+                    Pause
+                </button>
+                <button id="resetBtn" class="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full shadow-lg transition-all" aria-label="Reset stopwatch">
+                    Reset
+                </button>
+                <button id="lapBtn" class="btn bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-full shadow-lg transition-all" aria-label="Record lap time" disabled>
+                    Lap
+                </button>
+            </div>
+            
+            <!-- Lap Times Section -->
+            <div class="w-full">
+                <h2 class="text-xl font-semibold text-gray-700 mb-3 animate-bounce">
+                    Lap Times
+                </h2>
+                <div id="lapTimes" class="bg-gray-100 rounded-lg p-4 max-h-60 overflow-y-auto">
+                    <p class="text-gray-500 text-center py-10" id="noLapsMessage">No lap times recorded yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
